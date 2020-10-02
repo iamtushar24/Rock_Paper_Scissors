@@ -11,7 +11,7 @@ const scissors_div = document.getElementById("s");
 function getComputerChoice() {
 	const choice = ['r', 'p', 's'];
 	const randomNumber = Math.floor(Math.random() * 3);
-	return choices[randomNumber];
+	return choice[randomNumber];
 }
 
 function convertToWord(letter) {
@@ -29,7 +29,7 @@ function win(userChoice, computerChoice) {
 	computerScore_span.innerHTML = computerScore;
 	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. YOU WIN!! `;
 	userChoice_div.classList.add('green-glow');
-	setTimeout(() userChoice_div.classList.remove('green-glow'),300);
+	setTimeout(() => userChoice_div.classList.remove('green-glow'),300);
 }
 
 function lose(userChoice, computerChoice) {
@@ -50,7 +50,7 @@ function draw(userChoice, computerChoice) {
 	const userChoice_div = document.getElementById(userChoice);
 	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallCompWord}. IT'S A DRAW. `;
 	userChoice_div.classList.add('gray-glow');
-	setTimeout(() userChoice_div.classList.remove('gray-glow'),300);
+	setTimeout(() => userChoice_div.classList.remove('gray-glow'),300);
 }
 
 function game(userChoice) { 
